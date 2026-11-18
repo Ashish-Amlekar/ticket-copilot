@@ -46,7 +46,7 @@ class BM25Retriever:
     def __init__(self, chunks: list[Chunk]):
         self.chunks = chunks
         # Index title + text so a heading match counts.
-        self._bm25 = BM25Okapi([tokenize(f"{c.title} {c.text}") for c in chunks])
+        self._bm25 = BM25Okapi([tokenize(f"{c.title} {c.text[-200:]}") for c in chunks])
 
     def scores(self, query: str) -> list[float]:
         return list(self._bm25.get_scores(tokenize(query)))

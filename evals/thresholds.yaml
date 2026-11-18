@@ -2,8 +2,8 @@
 # Raise these as the system improves; never lower them to make a change pass
 # without writing down why.
 retrieval:            # deterministic, no LLM, runs on every PR
-  hit_rate_at_k: 0.85
-  mrr: 0.60
+  hit_rate_at_k: 0.95
+  mrr: 0.90
 end_to_end:           # needs a real LLM, run manually / nightly
   schema_valid_rate: 1.00
   citation_valid_rate: 0.95
